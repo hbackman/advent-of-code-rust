@@ -18,9 +18,18 @@ pub fn part1(input: &str) -> u32 {
     l.sort();
     r.sort();
 
-    l.iter().zip(r).map(|(l, r)| l.abs_diff(r)).sum()
+    l.into_iter()
+        .zip(r)
+        .map(|(l, r)| l.abs_diff(r))
+        .sum()
 }
 
-pub fn part2(input: &str) -> i32 {
-    2
+pub fn part2(input: &str) -> u32 {
+    let (l, r): (Vec<u32>, Vec<u32>) = parse(input)
+        .into_iter()
+        .unzip();
+
+    l.into_iter()
+        .map(|l| (r.iter().filter(|rr| **rr == l).count() as u32) * l)
+        .sum()
 }
