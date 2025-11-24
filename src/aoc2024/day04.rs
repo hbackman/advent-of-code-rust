@@ -54,7 +54,7 @@ fn find_xmas_strings(grid: &Vec<Vec<char>>, positions: &[(usize, usize)]) -> usi
     }).sum()
 }
 
-fn find_x_max_strings(grid: &Vec<Vec<char>>, positions: &[(usize, usize)]) -> usize {
+fn find_x_mas_strings(grid: &Vec<Vec<char>>, positions: &[(usize, usize)]) -> usize {
     let directions = [
         // M.S    S.M    M.M    S.S
         // .A. -> .A. -> .A. -> .A.
@@ -96,6 +96,6 @@ pub fn part1(input: &str) -> usize {
 pub fn part2(input: &str) -> usize {
     let g = parse(input);
     let p = find_xmas_maybes(&g, 'A');
-    let s = find_x_max_strings(&g, &p);
+    let s = find_x_mas_strings(&g, &p);
     s
 }
