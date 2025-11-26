@@ -3,6 +3,7 @@ pub mod day02;
 pub mod day03;
 pub mod day04;
 pub mod day05;
+pub mod day06;
 
 pub fn solve(day: u32, input: &str) {
     match day {
@@ -25,6 +26,10 @@ pub fn solve(day: u32, input: &str) {
         5 => {
             println!("Day 5 Part 1: {}", day05::part1(input));
             println!("Day 5 Part 2: {}", day05::part2(input));
+        }
+        6 => {
+            println!("Day 5 Part 1: {}", day06::part1(input));
+            println!("Day 5 Part 2: {}", day06::part2(input));
         }
         _ => eprintln!("Day {} not implemented", day),
     }
